@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XEditable Lite – Basic</title>
+  <script src="../xeditable.js"></script>
+</head>
+<body>
+  <h1>Basic</h1>
+
+  <p>
+    <span class="editable" data-type="text" data-name="username" data-title="Username">superuser</span>
+  </p>
+
+  <p>
+    <span class="editable" data-type="textarea" data-name="bio" data-title="Bio">Short bio…</span>
+  </p>
+
+  <script>
+    XEditable.initAll('.editable', {
+      url: '/echo', // replace with your endpoint
+      ajaxOptions: { dataType: 'json' }
+    });
+  </script>
+</body>
+</html>

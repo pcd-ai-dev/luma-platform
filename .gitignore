@@ -1,0 +1,33 @@
+# ── Base de données — JAMAIS ──
+config/
+*.sql
+
+# ── Assets clients / données réelles ──
+img/admin/
+img/l/
+img/root/
+img/pages/
+img/post/
+img/location/
+img/gallery/
+img/videos/images/
+img/videos/rec/
+
+# ── XML production ──
+xml/
+
+# ── Cache et temporaires ──
+includes/class/addons/gzip_browser/cache/
+tmp/
+
+# ── Dépendances Composer ──
+includes/Composer/vendor/
+
+# ── macOS ──
+.DS_Store
+__MACOSX/
+
+# ── Environnement ──
+.env
+config.php
+*.lock

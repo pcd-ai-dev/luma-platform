@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XEditable Lite – Remote Source</title>
+  <script src="../xeditable.js"></script>
+</head>
+<body>
+  <h1>Remote source for select</h1>
+
+  <p>
+    <a href="#" id="country" data-type="select" data-name="country" data-title="Choose country"></a>
+  </p>
+
+  <script>
+    XEditable.init(document.getElementById('country'), {
+      url: '/echo',
+      source: '/api/countries' // should return [{value:'IN',text:'India'}, ...]
+    });
+  </script>
+</body>
+</html>

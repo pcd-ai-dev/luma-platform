@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XEditable Lite – Inline</title>
+  <script src="../xeditable.js"></script>
+</head>
+<body>
+  <h1>Inline mode</h1>
+
+  <p>
+    <span class="editable" data-mode="inline" data-type="textarea" data-name="bio" data-title="Bio">Inline bio…</span>
+  </p>
+
+  <script>
+    XEditable.initAll('.editable', { url: '/echo' });
+  </script>
+</body>
+</html>

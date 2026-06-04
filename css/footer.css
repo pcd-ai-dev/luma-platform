@@ -1,0 +1,38 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2026 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* FOOTER */
+	/* --------------------------------------------------------- */
+
+		#footer {
+			width:100%;
+			color: #FFFFFF;
+			bottom: 0vw;
+			padding-top: 0vw;
+		}
+
+		#footer a {
+			text-decoration: none;
+			color: #F6F6F6;
+		}
+
+		#footer a:hover {
+			color: #FFFFFF;
+		}
+
+
+		@media only screen and (max-width: 1024px) {
+			
+		}
+
+		@media only screen and (max-width: 768px) {
+
+		}
+
+		@media only screen and (max-width: 600px) {
+			
+		}

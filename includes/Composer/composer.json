@@ -1,0 +1,31 @@
+{
+    "name": "luma/api",
+    "description": "Luma api",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "config": {
+        "platform": {
+            "php": "8.5"
+        }
+},
+"autoload": {
+        "psr-4": {
+            "Action\\": "../../includes/class/action/",
+            "Addons\\": "../../includes/class/addons/",
+            "App\\": "../../includes/class/app/",
+            "Front\\": "../../includes/class/front/",
+            "Session\\": "../../includes/class/session/",
+            "Tools\\": "../../includes/class/tools/",
+            "Agent\\": "../../includes/class/agent/",
+            "Xml\\": "../../includes/class/xml/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pierre Cosmao Dumanoir",
+            "email": "p@lumaprod.com"
+        }
+    ]
+}

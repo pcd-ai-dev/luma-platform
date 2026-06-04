@@ -1,0 +1,51 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+/* --------------------------------------------------------- */
+/* TYPE BUILDER */
+/* --------------------------------------------------------- */
+
+	
+	body{
+		background: #F7F7F7!important;
+	}
+
+	#builderContainer {
+		padding-top: 0px;
+	}
+
+	/* --------------------------------------------------------- */ 
+	/* WARNING | MSG */
+	/* --------------------------------------------------------- */
+
+        #builderMsgUpdate {
+            position: fixed;
+            display: none;
+            width: 30%;
+            padding: 20px;
+            bottom: 70px;
+            left: 50%;
+            margin-left: -15%;
+            font-size: 14px;
+            text-align: center;
+            z-index: 9999;
+        }
+
+	.inputRequired{border-left:3px solid #F90000!important;}
+
+
+	@media only screen and (max-width: 1024px) {
+
+	}
+
+
+	@media only screen and (max-width: 768px) {
+
+	}
+
+	@media only screen and (max-width: 600px) {
+
+	}

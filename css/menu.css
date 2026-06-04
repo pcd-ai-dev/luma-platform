@@ -1,0 +1,527 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+
+
+/* --------------------------------------------------------- */
+/* MOBILE MENUS */
+/* --------------------------------------------------------- */
+
+
+	.hideMenu {
+		display: none;
+	}
+
+	#menuRight {
+		position: fixed;
+		width: 100%;
+		right: -100%;
+		min-height: 100%;
+		z-index: 20;
+		background-color: rgba(0, 0, 0, .9);
+	}
+
+	.menu-icon {
+		position: absolute;
+		font-size: 3em;
+		max-width: 50px;
+		margin: 0px;
+		margin-top: 1vw;
+		right: 4vw;
+		top: 6vw;
+		text-align: center;
+		display: block;
+		cursor: pointer;
+		transition: transform .2s ease;
+		z-index: 999;
+		color: white;
+  		mix-blend-mode: difference;
+	}
+
+	.menu-icon:hover {
+		transform: scale(0.9);
+	}
+
+	.menu-icon:before,
+	.menu-icon:after {
+		line-height: .5;
+	}
+
+	.menu-icon:before {
+		font-size: 1em;
+		content: '\2630';
+		display: block;
+	}
+
+	.menu-icon:after {
+		content: '\00D7';
+		font-size: 1.3em;
+		font-weight: 800;
+		display: none;
+		color: #FFFFFF;
+		
+	}
+
+	#toggle-menu:checked~label[for="toggle-menu"] .menu-icon {
+		transform: rotate(180deg);
+	}
+
+	#toggle-menu:checked~label[for="toggle-menu"] .menu-icon:before {
+		display: none;
+	}
+
+	#toggle-menu:checked~label[for="toggle-menu"] .menu-icon:after {
+		display: block;
+	}
+
+
+/* --------------------------------------------------------- */
+/* MOBILE NAV */
+/* --------------------------------------------------------- */
+
+	ul#navmain {
+		list-style: none;
+		padding-top: 0px;
+		line-height: 25px;
+		padding: 0;
+		margin-top: 0px;
+		padding-bottom: 0px;
+		margin-left: 0px;
+		overflow-y: scroll;
+		position: absolute;
+		height: 70%;
+		width: 100%;
+	}
+
+	#navmain ul {
+		list-style: none;
+	}
+
+	#navmain {
+		font-size: 8vw;
+	}
+
+	#navmain a {
+		display: block;
+		color: #d4d4d4;
+		text-decoration: none;
+		padding-top: 0px;
+		padding-left: 30px;
+		text-align: left;
+		font-family: 'AvenirNextLTPro-Regular';
+	}
+
+	#navmain li {
+		margin-top: 15px;
+	}
+
+	html>body #navmain li {
+		border-right: 1px solid transparent;
+	}
+
+	#navmain li ul {
+		white-space: nowrap;
+		text-align: left;
+		padding: 10px;
+		padding-top: 0px;
+		top: 0px;
+	}
+
+	#navmain li ul li {
+		border-top: 1px solid #fff;
+	}
+
+	html>body #navmain li ul li {
+		border-top: 1px solid transparent;
+	}
+
+	#navmain li ul ul {
+		margin: -22px 0 0 144px;
+		border-left: 1px solid #fff;
+	}
+
+	html>body #navmain li ul ul {
+		border-left: 1px solid transparent;
+	}
+
+	#navmain li a.current,
+	#navmain a:hover {
+		color: #0fa6b2;
+	}
+
+	#navmain li ul a:hover,
+	#navmain li ul a.current,
+	#navmain ul li a:hover {
+		color: #0fa6b2;
+	}
+
+	#navmain li a {
+		font-size: 16px;
+	}
+
+	#navmain ul li a {
+		font-size: 16px;
+		margin-right: 20px;
+		padding-top: 3px;
+		padding-left: 20px;
+		display: block;
+	}
+
+
+
+/* --------------------------------------------------------- */
+/* LAPTOP MENUS */
+/* --------------------------------------------------------- */
+
+	#menu {
+		width: 100%;
+		right: 0px;
+		top: 0px;
+		margin: 0;
+		padding: 20px;
+		border: 0;
+		display: block;
+		list-style-type: none;
+	}
+
+	#menu.map {
+		position: fixed;
+		top: 0px;
+		margin-top: 0px;
+		z-index: 25;
+		background-color: rgba(255,255,255,0.9);
+		zoom:1;
+		box-shadow:10px 10px 20px -3px rgba(0,0,0,0.29);
+		transition:.3s ease-in-out;
+	}
+
+
+/* --------------------------------------------------------- */
+/* LAPTOP NAV */
+/* --------------------------------------------------------- */
+
+	ul#nav {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		list-style: none;
+		position: relative;
+		margin: 0;
+		padding: 0;
+	}
+
+	ul#nav a {
+		display: block;
+		text-decoration: none;
+		font-size: 16px;
+		padding: 5px 12px 5px 12px;
+		margin-left: 2px;
+		margin-right: 2px;
+		letter-spacing: 2px;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	ul#nav li {
+		position: relative;
+		float: left;
+		margin: 0;
+		padding: 0
+	}
+
+	ul#nav li a {
+		font-size: 18px;
+		opacity: 0.8;
+		border: 1px solid rgba(0, 0, 0, 0);
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 20px;
+		transition: color 300ms linear;
+		transition: border-color 400ms linear;
+	}
+
+	ul#nav li a:hover {
+		opacity: 1;
+		color:#111111;
+		background-color:rgba(100, 100, 100, .1);
+	}
+
+	ul#nav li a.current {
+		opacity: 1;
+		color:#111111;
+		border: 1px solid #111111;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 20px;
+	}
+
+
+	ul#nav ul li a:hover,
+	ul#nav ul li a.current {
+		background-color:rgba(100, 100, 100, .1);
+		color: #111111;
+		font-weight: 500;
+		border: 0px solid rgba(0, 0, 0, 0);
+	}
+
+	ul#nav ul {
+		display: none;
+		list-style: none;
+		position: absolute;
+		top: 100%;
+		left: 2px;
+		background-color:rgba(100, 100, 100, .1);
+		padding: 0;
+		z-index: 999;
+		text-align: left;
+	}
+
+	ul#nav ul li {
+		float: none;
+		width: 200px
+	}
+
+	ul#nav ul li a {
+		line-height: 120%;
+		padding: 10px 15px;
+		color: #FFFFFF;
+		font-weight: 100;
+		font-size: 12px;
+		border: 0px solid rgba(0, 0, 0, 0);
+	}
+
+	ul#nav ul ul {
+		top: 0;
+		left: 100%
+	}
+
+	ul#nav li:hover>ul {
+		display: block
+	}
+
+	
+	@media only screen and (max-width: 1024px) {
+		
+		ul#nav li a {
+			font-size:12px;
+		}
+	}
+
+
+	@media only screen and (max-width: 768px) {
+
+
+		#toggleMenuRight {
+			display: block;
+			height: 15vw;
+			width: 15vw;
+			margin: 0px;
+			margin-top: 2vw;
+			margin-right: 2vw;
+			padding-right: 0px;
+			padding-top: 0px;
+			background-image: url(/img/interface/menu/btnMenu_on.png);
+			background-repeat: no-repeat;
+			background-size: 12vw 12vw;
+			background-position: right;
+			cursor: pointer;
+			color: #FFFFFF;
+			font-size: 28px;
+			position: fixed;
+			right: 1vw;
+			text-align: right;
+			z-index: 99;
+		}
+
+		.menu-icon {
+			position: absolute;
+			font-size: 3em;
+			max-width: 50px;
+			margin: 0px;
+			margin-top: 2vw;
+			right: 40px;
+			top: 20px;
+			text-align: center;
+			display: block;
+			cursor: pointer;
+			transition: transform .2s ease;
+			z-index: 999;
+		}
+
+		.menu-icon:before {
+			font-size: 1.8em;
+			content: '\2630';
+			display: block;
+		}
+
+		.menu-icon:after {
+			content: '\00D7';
+			font-size: 2em;
+			font-weight: 800;
+			display: none;
+			color: #FFFFFF;
+		}
+
+		#menu {
+			display: none !important;
+		}
+
+
+		/* Menu main */
+
+		ul#navmain {
+			list-style: none;
+			padding-top: 0px;
+			line-height: 8vw;
+			padding: 0;
+			margin-top: 35vw;
+			padding-bottom: 0px;
+			margin-left: 0px;
+			overflow-y: scroll;
+			position: absolute;
+			height: 70%;
+			width: 100%;
+		}
+
+		#navmain ul {
+			list-style: none;
+		}
+
+		#navmain {
+			font-size: 8vw;
+		}
+
+		#navmain a {
+			display: block;
+			color: #d4d4d4;
+			text-decoration: none;
+			padding-top: 0px;
+			padding-left: 30px;
+			text-align: left;
+		}
+
+		#navmain li {
+			margin-top: 15px;
+		}
+
+		html>body #navmain li {
+			border-right: 1px solid transparent;
+		}
+
+		#navmain li ul {
+			white-space: nowrap;
+			text-align: left;
+			padding: 10px;
+			padding-top: 0px;
+			top: 0px;
+		}
+
+		#navmain li ul li {
+			border-top: 1px solid #fff;
+		}
+
+		html>body #navmain li ul li {
+			border-top: 1px solid transparent;
+		}
+
+		#navmain li ul ul {
+			border-left: 1px solid #fff;
+		}
+
+		html>body #navmain li ul ul {
+			border-left: 1px solid transparent;
+		}
+
+		#navmain li a.current,
+		#navmain a:hover {
+			color: #0fa6b2;
+		}
+
+		#navmain #navmain li ul a:hover,
+		#navmain li ul a.current,
+		#navmain ul li a:hover {
+			color: #0fa6b2;
+		}
+
+		#navmain li a {
+			font-size: 5vw;
+		}
+
+		#navmain ul li a {
+			font-size: 5vw;
+			margin-right: 20px;
+			padding-top: 3px;
+			padding-left: 20px;
+			display: block;
+		}
+
+
+		/* Sous Menu */
+
+		#underNav {
+			padding: 5vw;
+		}
+
+		#underNav a {
+			display: inline-block;
+			font-family: 'AvenirNextLTPro-Regular';
+			font-size: 4vw;
+			margin-right: 3vw;
+			padding: 3vw;
+			padding-top: 1vw;
+			padding-bottom: 1vw;
+			color: #111111;
+			background-color: #E8E8E8;
+			border-radius: .5vw;
+		}
+
+		#underNav a:hover,
+		#underNav a.current {
+			font-family: 'AvenirNextLTPro-Demi';
+			color: #92BF20;
+			background-color: #93C022;
+		}
+
+	}
+
+
+	@media only screen and (max-width: 600px) {
+
+		.menu-icon {
+			position: absolute;
+			font-size: 3em;
+			max-width: 50px;
+			margin: 0px;
+			margin-top: 20px;
+			right: 20px;
+			top: 20px;
+			text-align: center;
+			display: block;
+			;
+			cursor: pointer;
+			transition: transform .2s ease;
+			z-index: 999;
+		}
+
+		.menu-icon:before {
+			font-size: 1.3em;
+			content: '\2630';
+			display: block;
+		}
+
+		.menu-icon:after {
+			content: '\00D7';
+			font-size: 1.3em;
+			font-weight: 800;
+			display: none;
+			color: #FFFFFF;
+		}
+
+	}
+
+	/* Main Menu */

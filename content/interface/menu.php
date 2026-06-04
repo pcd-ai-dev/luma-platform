@@ -1,0 +1,1 @@
+<div style="border:0px;"><?= $nav->navLaptop((isset($idSite))? (int)$idSite : 1, (int)$idCategory, (int) $checkParent, (int)$idLang, $varLinkData, 0); ?></div>

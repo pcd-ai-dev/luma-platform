@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XEditable Lite – Date Format</title>
+  <script src="../xeditable.js"></script>
+</head>
+<body>
+  <h1>Date formatting</h1>
+
+  <p>
+    <span id="dob" data-type="date" data-name="dob" data-title="DOB" data-format="DD/MM/YYYY">1990-07-15</span>
+  </p>
+  <p>
+    <span id="meeting" data-type="datetime-local" data-name="meet" data-title="Meeting" data-format="YYYY-MM-DDTHH:mm">2025-12-31T16:30</span>
+  </p>
+
+  <script>
+    XEditable.initAll('#dob, #meeting', { url:'/echo' });
+  </script>
+</body>
+</html>

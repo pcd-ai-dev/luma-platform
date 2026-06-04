@@ -1,0 +1,82 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* INDEX */
+	/* --------------------------------------------------------- */
+
+		.cachediv {
+			display: none;
+		}
+
+		a:link {
+			color: #111111;
+			font-style: normal;
+			text-decoration: none;
+		}
+
+		a:visited {
+			color: #111111;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #81B929;
+		}
+
+		a:active {
+			color: #81B929;
+			text-decoration: none;
+		}
+
+		th {
+			text-align: left;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+			padding: 0;
+			margin: 0px !important;
+			background-color:#F7F7F7;
+			color:#111111;
+			font-weight: 300;
+			font-style: normal;
+			letter-spacing: 1px;
+			outline-width: 0px;
+			font-family: 'AvenirNextLTPro-Regular';
+		}
+
+		body.noScroll {
+			overflow: hidden;
+		}
+
+		main {
+			flex: 1;
+		}
+
+
+	/* --------------------------------------------------------- */ 
+	/* WARNING | MSG */
+	/* --------------------------------------------------------- */
+
+        #msgFrontUpdate {
+            position: fixed;
+            display: none;
+            width: 30%;
+            padding: 20px;
+            bottom: 70px;
+            left: 50%;
+            margin-left: -15%;
+            font-size: 14px;
+            text-align: center;
+            z-index: 999;
+        }
+
+
+		@media only screen and (max-width: 768px) {}
+		@media only screen and (max-width: 600px) {}
