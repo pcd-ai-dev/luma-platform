@@ -194,4 +194,20 @@ Le code de production complet est disponible sur demande dans le cadre d'un entr
 
 ---
 
+## Screenshots
+
+### Interface d'administration
+![Dashboard admin](screenshots/ScreenShotLumaCRM01.jpg)
+
+### Builder de pages (GrapesJS)
+![Builder GrapesJS](screenshots/ScreenShotLumaCRM02.jpg)
+
+### Outil de gestion de formation
+![Gestion de formation](ScreenShotLumaCRM03.jpg)
+
+### Outil de gestion de projets (Client / Projet / ressources)
+![Gestion de proget](ScreenShotLumaCRM04.jpg)
+
+---
+
 *Luma — Pierre Cosmao-Dumanoir · 2003–2026 · Paris*
