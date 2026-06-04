@@ -1,0 +1,229 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+/* --------------------------------------------------------- */
+/* TYPE MAP */
+/* --------------------------------------------------------- */
+
+	/* Map */
+
+	#mapContainer {
+		width: 50%;
+	}
+
+	#targetmapfront {
+		position: relative;
+		width:100%;
+		border:1px;
+	}
+
+
+	#targetmapfront:before{
+		content: "";
+		display: block;
+		padding-top: 56.33%;
+	}
+
+
+	#mainMap {
+		display:table;
+		margin: auto;
+		width: 100%;
+		text-align: center;
+	}
+
+	#leftMap  {
+		display:table-cell;
+		width: 30%;
+	}
+
+	#rightMap {
+		width: 5%;
+		padding-left: 20px;
+		display: none;
+	}
+
+
+	#panelcontent {
+		margin-right:20px;
+		color:#111111;
+		max-width:100%;
+		min-height: 100%; 
+	}
+
+
+	#panelarea {
+		color:#111111;
+		max-width: 100%!important;
+	}
+
+
+	.controls {
+		margin-top: 16px;
+		border: 1px solid transparent;
+		box-sizing: border-box;
+		height: 32px;
+		width:100%;
+		outline: none;
+	}
+
+	#origin {
+		background-color:#FFFFFF;
+		width:100%;
+		font-size: 15px;
+		font-weight: 300;
+		text-overflow: ellipsis;
+		border:1px solid #FFF;
+		padding:5px;
+	}
+
+	#origin:focus {
+		border-color: #ba4824;
+	}
+
+
+	#destination {
+		background-color: #fff;
+		margin-top:3px;
+		margin-bottom:10px;
+		width: 100%;
+		font-size: 15px;
+		font-weight: 300;
+		text-overflow: ellipsis;
+		border:1px solid #FFF;
+		padding:5px;
+	}
+
+	#destination:focus {
+		border-color: #4d90fe;
+	}
+
+
+
+	#contentbulle {
+		color:#333;
+	}
+
+	.adp-step, .adp-text
+	{
+	width: 100%;
+	}
+
+	.adp-step, .adp-substep
+	{
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color:#454545;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0.3em;
+	padding-right: 3px;
+	padding-bottom: 0.3em;
+	padding-left: 3px;
+	vertical-align: top;
+	color:#111111;
+	font-size:12px;
+	}
+
+	.adp-placemark
+	{
+	/* background-color: #eeeeee; */
+	background-image: none;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: 0% 0%;
+	background-clip: border-box;
+	background-origin: padding-box;
+	background-size: auto auto;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: silver;
+	border-bottom-color: silver;
+	border-image-source: none;
+	border-image-slice: 100% 100% 100% 100%;
+	border-image-width: 1 1 1 1;
+	border-image-outset: 0 0 0 0;
+	border-image-repeat: stretch stretch;
+	color: #FFF;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	vertical-align: middle;
+	}
+
+
+	.adp table{
+		font-weight: 300;
+		color: #1111111;
+		width:100%;
+		background:none;
+		border:0px;
+	}
+
+	.adp, .adp table {
+		color: #F7F7F7!important;
+	}
+
+	.adp{
+		font-size:14px;
+		color: #c7bb9e;
+	}
+
+	.adp-substep .adp-stepicon .adp-maneuver{
+	background-image: url("/img/interface/map/maneuvers.png");
+	}
+
+	.adp-details, .adp-legal
+	{
+	color: #F6F6F6;
+	font-size:8px;
+	}
+
+
+	.adp-list {
+		background-color:#323232!important;
+		border: 0px solid #cdcdcd!important;
+		cursor: pointer;
+		padding: 4px;
+		color: #F6F6F6;
+	}
+
+	.adp-listsel {
+		background-color: #222222!important;
+		text-decoration: none;
+	}
+
+
+	@media only screen and (max-width: 768px) {
+		
+		#mapContainer {
+			width: 90%;
+		}
+
+		#mainMap {
+			display:block;
+			width: 100%;
+			text-align: center;
+		}
+
+		#leftMap  {
+			display:block;
+			width: 100%;
+		}
+
+		#rightMap {
+			width: 100%;
+			display:block;
+		}
+		
+
+	}

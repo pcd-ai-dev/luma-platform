@@ -1,0 +1,196 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2026 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* HEADER */
+	/* --------------------------------------------------------- */
+
+		#header {
+			width: 100%;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content:space-between;
+			align-items: center;
+			background: #FFFFFF;
+		}
+
+		#header .leftHeader {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			align-items: center;
+			max-width:350px;
+			font-size: 16px;
+		}
+
+		#header .centerHeader {
+			font-family: 'AvenirNextLTPro-Regular';
+			color:#FFF;
+			justify-content: flex-start;
+			align-items: center;
+			font-size:22px;
+		}
+
+		#header .rightHeader {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		#hLogo {
+			margin-left:0px;
+			padding-left:20px;
+			padding-top:10px;
+			color:#FFFFFF;
+			text-align: left;
+			position:absolute;
+			width: 140px;
+			z-index: 3;
+		}
+
+		#langarea {
+			color:#FFFFFF;
+		}
+
+		#langarea a {
+			padding:5px;
+			color:#FFFFFF;
+			font-size:16px;
+		}
+
+		#langarea a:hover {
+			color:#338593;
+		}
+
+		#langarea a.current {
+			color:#338593;
+			font-family: 'AvenirNextLTPro-Demi';
+			padding:11px 10px 8px 10px;
+			background-color:rgba(100, 100, 100, .3);
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 20px;
+		}
+
+		#hLogoMobile {
+			margin-left: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+			color: #FFFFFF;
+			text-align: left;
+			position: absolute;
+			width: 15vw;
+		}
+
+		#headerLogoCollapse {
+			position:fixed;
+			z-index:999;
+			top:0px;
+			left:10vw;
+			display:none;
+			width: 40px;
+		}
+
+
+ 	/* --------------------------------------------------------- */ 
+	/* LANGUAGE */
+	/* --------------------------------------------------------- */
+
+		#langarea {
+			color:#FFFFFF;
+		}
+
+		#langarea a {
+			padding:5px;
+			color:#FFFFFF;
+			font-size:16px;
+		}
+
+		#langarea a:hover {
+			color:#338593;
+		}
+
+		#langarea a.current {
+			color:#338593;
+			font-family: 'AvenirNextLTPro-Demi';
+			padding:11px 10px 8px 10px;
+			background-color:rgba(100, 100, 100, .3);
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 20px;
+		}
+
+
+ 	/* --------------------------------------------------------- */ 
+	/* HEADER COLAPSE */
+	/* --------------------------------------------------------- */
+
+		#headerLogoCollapse {
+			position: fixed;
+			z-index: 999;
+			top: 10px;
+			left: 20px;
+			display: none;
+			width: 60px;
+		}
+
+
+	@media only screen and (max-width: 1024px) {
+
+		#hLogo {
+			width: 140px;
+		}
+
+		#headerLogoCollapse {
+			width: 60px;
+		}
+
+	}
+
+
+	@media only screen and (max-width: 768px) {
+		
+		#header {
+			position:relative;
+			width:100%;
+			height: auto;
+			padding-top:0px;
+			z-index:0;
+		}
+		
+		#hLogo {
+			width: 30vw;
+		}
+		
+		#hLogoMobile {
+			width: 85vw;
+			padding: 4vw;
+		}
+		
+		#headerLogoCollapse {
+			display: none;
+		}
+		
+	}
+
+	@media only screen and (max-width: 600px) {
+		
+		#header {
+			position:relative;
+			width:100%;
+			height: auto;
+			padding-top:0px;
+			z-index:0;
+		}
+		
+		#hLogo {
+			width: 130px;
+		}
+
+	}

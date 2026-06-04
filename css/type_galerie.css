@@ -1,0 +1,320 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+/* --------------------------------------------------------- */
+/* TYPE photo */
+/* --------------------------------------------------------- */
+
+/* --------------------------------------------------------- */
+/* CONTENT */
+/* --------------------------------------------------------- */
+
+	.nophotoList {
+		background-color:#F9F9F9;
+		padding:25px;
+	}
+
+	#photoList {
+		width:100%;
+		margin:0px;
+		padding: 0px;
+		padding-top: 2vw;
+		transition: opacity 1s ease-in-out; 
+	}
+
+	#photoList li {
+		list-style:none;
+		width:30vw;
+		display:inline-block;
+		padding:10px;
+		margin-top: -6px;
+		transition: .3s ease-in-out;
+	}
+
+	.photoItemList {  
+		display: block;
+		position: relative;
+		width: 100%;  
+		overflow: hidden;
+	}
+
+	.photoItemList {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.imgBoxHome {
+		position: relative;
+		width: 100%;
+		height: auto;
+		transition: transform 0.3s ease;
+	}
+
+	.imgBoxHome:before{
+		content: "";
+		display: block;
+		padding-top: 56.33%;
+	}
+
+	.photoItemList:hover .imgBoxHome {
+		transform: scale(1.05);
+	}
+
+
+/* --------------------------------------------------------- */
+/* GALLERY MENU */
+/* --------------------------------------------------------- */
+
+	#photoMenu {
+		text-align: center;
+		padding-top: 10px;
+	}
+
+	#photoMenu a {
+		display: inline-block;
+		margin-right: 15px;
+		margin-bottom: 20px;
+		padding: 10px 20px 5px 20px;
+		border: 1px solid rbga(0,0,0,0);
+	}
+
+	#photoMenu a:hover {
+		color:#111111;
+		background-color:rgba(100, 100, 100, .1);
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 20px;
+	}
+
+	#photoMenu a.current {
+		border: 1px solid #111111;
+		color:#111111;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 20px;
+	}
+
+
+/* --------------------------------------------------------- */
+/* GALLERY PAGE */
+/* --------------------------------------------------------- */
+
+	#photoContainer {
+		text-align: center;
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	ul#photoArea {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	ul#photoArea li {
+		display: inline-block;
+		width: 33.33%;
+		vertical-align: top;
+	}
+
+	.imgBoxPhoto {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-o-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		background-position: 50% 50%;
+	}
+
+	.imgBoxPhoto:before {
+		content: "";
+		display: block;
+		padding-top: 56.33%;
+	}
+
+
+	@media only screen and (max-width: 1024px) {
+
+	/* --------------------------------------------------------- */
+	/* GALLERY  */
+	/* --------------------------------------------------------- */
+		
+		#photoMenu {
+			padding:10px;
+		}
+		
+		ul#photoList, #photoList {
+			width:100%;
+			margin:0px;
+			font-size: 2vw;
+			text-align: center;
+			transition: opacity 1s ease-in-out; 
+		}
+		
+		ul#photoList li, #photoList li {
+			list-style:none;
+			width:44vw;
+			padding:0px;
+			padding-left: 1.5vw;
+			padding-right: 1.5vw;
+			padding-bottom: 3vw;
+			display:inline-block;
+		}
+
+	/* --------------------------------------------------------- */
+	/* GALLERY PAGE */
+	/* --------------------------------------------------------- */
+
+		ul#photoArea, #photoArea {
+				width: 100%;
+				margin: 2vw;
+				font-size: 2vw;
+				text-align: center;
+				-webkit-transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-o-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+			}
+
+			ul#photoArea li, #photoArea li {
+				list-style: none;
+				width: 44vw;
+				padding: 0px;
+				padding-left: 1.5vw;
+				padding-right: 1.5vw;
+				padding-bottom: 3vw;
+				display: inline-block;
+			}
+		
+	}
+
+	@media only screen and (max-width: 768px) {
+
+		#photoMenu {
+			padding:10px;
+		}
+		#photoMenu a {
+			font-size: 2.5vw;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			padding: 10px 10px 5px 10px;
+			border-radius: 2px;
+		}
+
+		ul#photoList, #photoList {
+			width:100%;
+			margin:0px;
+			padding: 0px;
+			font-size: 2vw;
+			text-align: center;
+			transition: opacity 1s ease-in-out; 
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* GALLERY PAGE */
+	/* --------------------------------------------------------- */
+		
+		ul#photoList li, #photoList li {
+			list-style:none;
+			width:44vw;
+			padding:0px;
+			padding-left: 1.5vw;
+			padding-right: 1.5vw;
+			padding-bottom: 3vw;
+			display:inline-block;
+		}
+
+		ul#photoArea, #photoArea {
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+			font-size: 2vw;
+			text-align: center;
+			-webkit-transition: opacity 1s ease-in-out;
+			-moz-transition: opacity 1s ease-in-out;
+			-o-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+		}
+
+		ul#photoArea li, #photoArea li {
+			list-style: none;
+			width: 97vw;
+			padding: 0px;
+			padding-left: 1.5vw;
+			padding-right: 1.5vw;
+			padding-bottom: 2vw;
+			display: inline-block;
+		}
+		
+	}
+
+	@media screen and (max-width: 600px) {
+		
+		#photoMenu {
+			padding:10px;
+		}
+
+		#photoMenu a {
+			font-size: 3.5vw;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			padding: 10px 10px 5px 10px;
+			border-radius: 2px;
+		}
+
+		ul#photoList, #photoList {
+			width:100%;
+			margin:0px;
+			padding: 0px;
+			font-size: 2vw;
+			text-align: center;
+			transition: opacity 1s ease-in-out; 
+		}
+		
+		ul#photoList li, #photoList li {
+			list-style:none;
+			width:100%;
+			padding:0px;
+			padding-left:0px;
+			padding-right:0px;
+			padding-bottom: 3vw;
+			display:inline-block;
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* GALLERY PAGE */
+	/* --------------------------------------------------------- */
+
+		ul#photoArea, #photoArea {
+			width: 100%;
+			margin: 0px;
+			padding: 0px;
+			font-size: 2vw;
+			text-align: center;
+			-webkit-transition: opacity 1s ease-in-out;
+			-moz-transition: opacity 1s ease-in-out;
+			-o-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+		}
+
+		ul#photoArea li, #photoArea li {
+			list-style: none;
+			width: 97vw;
+			padding: 0px;
+			padding-left: 1.5vw;
+			padding-right: 1.5vw;
+			padding-bottom: 2vw;
+			display: inline-block;
+		}
+
+	}

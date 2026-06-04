@@ -1,0 +1,89 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* ADMIN  HEADER */
+	/* --------------------------------------------------------- */
+
+		#adminheader {
+			height: 65px;
+			width: 100%;
+			position: fixed;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content:space-between;
+			align-items: center;
+			z-index:999;
+			color:#CCC;
+			background-color:#222222;
+			font-family: 'AvenirNextLTPro-Regular';
+		}
+
+		#adminheader .leftHeader {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-start;
+			align-items: center;
+			min-width:300px;
+			font-size: 16px;
+		}
+
+		#adminheader .centerHeader {
+			color:#FFF;
+			font-size:22px;
+			padding-left: 90px;
+		}
+
+		#adminheader .rightHeader {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		.adminImg{ 
+			border-radius: 5px;
+		}
+
+        /* Header count */
+        #countNotify {
+			margin-left:20px;
+            padding: 6px 6px 5px 6px;
+            background-color: #ED0003;
+            border-radius: 3px;
+        }
+
+        #countNotifyValid {
+    		padding: 6px 6px 5px 6px;
+            background-color: #ff6000;
+            border-radius: 3px;
+        }
+
+        #sessionClose a {
+            display: flex;
+			align-items: center;
+			height: 64px;
+			padding-right: 20px;
+			padding-left: 20px;
+			margin-left:20px;
+			font-size: 14px;
+			color: #bbbbbb;
+			background-color: #555555;
+        }
+
+        #sessionClose a:hover {
+			background-color: #ED0003;
+			color: #FFFFFF;
+        }
+
+
+	@media only screen and (max-width: 768px) {
+
+		#adminheader .leftHeader {
+			min-width:250px;
+		}
+
+	}

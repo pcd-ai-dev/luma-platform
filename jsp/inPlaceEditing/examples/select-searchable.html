@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XEditable Lite – Searchable Select</title>
+  <script src="../xeditable.js"></script>
+</head>
+<body>
+  <h1>Searchable Select</h1>
+
+  <p>
+    <a href="#" id="gender" data-type="select" data-name="gender" data-title="Choose gender">Female</a>
+  </p>
+
+  <script>
+    XEditable.init(document.getElementById('gender'), {
+      url: '/echo',
+      source: [
+        { value: 1, text: 'Male' },
+        { value: 2, text: 'Female' },
+        { value: 3, text: 'Transgender' }
+      ]
+    });
+  </script>
+</body>
+</html>

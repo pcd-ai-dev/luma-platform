@@ -1,0 +1,135 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* BTN */
+	/* --------------------------------------------------------- */
+
+		.cubutton, #cuButtonRed a, .cuButtonRedBTN, .cuButtonRedBTNI {
+			background-color: #bdbbba;
+			color: #ffffff;
+			font-size: 16px;
+			font-weight: 500;
+			padding: 12px 24px;
+			text-align: center;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		}
+		
+		.cubutton:hover {
+			background-color: var(--color-adminColor);
+			color: #ffffff;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+		}
+
+		.cubutton:disabled {
+			border: 1px solid #E9E9E9;
+			background-color: #E9E9E9;
+			color: #BDBDBD;
+		}
+
+		#cuButtonRed a:hover, .cuButtonRedBTN:hover, .cuButtonRedBTNI:hover{
+			background-color:#C10B0B;
+			cursor: pointer;
+			color:#ffffff;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+		}
+
+		/* Admin */
+
+		.adminSmallButton, .addFileBtn,  .startUpload {
+			background-color: #000000;
+			font-size: 12px;
+			padding: 10px 15px 10px 15px;
+			font-weight: bold;
+			text-align: center;
+			border: 0px;
+			cursor: pointer;
+			color: #ffffff;
+			border-radius: 5px;
+			white-space: nowrap;
+			margin-right: 10px;
+			transition: background-color 0.3s ease;
+		}
+
+		.adminSmallButton:hover, .addFileBtn:hover,  .startUpload:hover{
+			background-color: var(--color-adminColor);
+			cursor: pointer;
+			color: #ffffff;
+		}
+
+		 .startUpload:disabled {
+			border: 1px solid #E9E9E9;
+			background-color: #E9E9E9;
+			color: #BDBDBD;
+		 }
+
+
+		/* PLUPLOAD */
+
+		.btn-upload {
+			background-color: #111111;
+			color: #ffffff;
+			font-size: 14px;
+			font-weight: 500;
+			padding: 12px 24px;
+			text-align: center;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		}
+
+		.btn-upload-small {
+			background-color: #111111;
+			color: #ffffff;
+			font-size: 14px;
+			font-weight: 500;
+			padding: 6px 10px;
+			text-align: center;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+		}
+
+		.btn-upload:hover, .btn-upload-small:hover {
+			background-color: var(--color-adminColor);
+			color: #ffffff;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+		}
+
+		.btn-danger {
+			height:34px;
+			background-color:#e4e4e4;
+			font-size:14px;
+			padding:4px;
+			padding-left:20px;
+			padding-right:20px;
+			text-align:center;
+			border:0px;
+			cursor:pointer;
+			color:#111111!important;
+			transition: all 0.3s ease;
+		}
+
+		.btn-danger:hover {
+			background-color: #C10B0B;
+			color:#FFFFFF!important;
+			transform: translateY(-2px);
+			box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+		}
+
+		/* UPLAOD */
+		

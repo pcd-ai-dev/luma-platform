@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XEditable Lite – AJAX</title>
+  <script src="../xeditable.js"></script>
+</head>
+<body>
+  <h1>AJAX submit</h1>
+
+  <p>
+    <span id="username" data-type="text" data-name="username" data-title="Username">alice</span>
+  </p>
+
+  <script>
+    XEditable.init(document.getElementById('username'), {
+      url: '/api/profile/username',
+      ajaxOptions: { type: 'POST', dataType: 'json' },
+      success: function (resp, value) {
+        // return a string here to show an error instead of closing
+        if (String(value).length < 3) return 'At least 3 characters';
+      }
+    });
+  </script>
+</body>
+</html>

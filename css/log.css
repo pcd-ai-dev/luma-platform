@@ -1,0 +1,75 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* LOG */
+	/* --------------------------------------------------------- */
+
+		#logarea {
+			margin-top: 180px;
+			font-family:Verdana, Arial, Helvetica, sans-serif;
+			font-size:11px;
+			font-weight:bold;
+			color:#e25248;
+			line-height:1em;
+		}
+
+		#logarea .form {
+			width:225px;
+			outline:0px;
+			height:25px;
+			color:#000000;
+			margin-bottom:4px;
+			font-family:Verdana, Arial, Helvetica, sans-serif;
+			font-size:11px;
+			border:1px solid #ECECEC;
+			background-color:#FDFDFD;
+			padding:2px;
+			border-radius:1px;
+		}
+
+		#logarea a{
+			text-align:center;
+			text-decoration:none;
+			color:#666666;
+			font-family:Verdana, Arial, Helvetica, sans-serif;
+			font-size:11px;
+			cursor:pointer;
+		}
+		#logarea a:hover {
+			color:#62a9d8;
+			font-weight:bold;
+		}
+
+		.formLogAdmin {
+			width:225px;
+			margin-bottom:4px;
+			padding: 8px 10px 8px 10px;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 13px;
+			border-radius: 1px;
+			background-color: transparent;
+			color: #FFFFFF;
+			border: 0px;
+			border-bottom: 1px solid #F6F6F6; 
+		}
+
+		body.adminLogIdf .formLogAdmin {
+			color: #FFFFFF;
+		}
+
+
+		.formLogAdmin::placeholder {
+		color: #A7A7A7;
+		font-size: 13px;
+		}
+
+		body.adminLogIdf .formLogAdmin::placeholder {
+			color: #F7F7F7;
+		}
+
+		/* Fin Block log */
+

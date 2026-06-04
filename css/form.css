@@ -1,0 +1,621 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright 2003-2025 | Luma Prod
+ *  @version Release: 3
+ */
+
+
+	/* --------------------------------------------------------- */
+	/* FORM GLOBAL */
+	/* --------------------------------------------------------- */
+
+		form {
+			margin: 0;
+			padding: 0;
+		}
+
+		input,
+		textarea {
+			outline: 0;
+		}
+
+		input.loaderinnerinput {
+			background: url('/img/interface/elements/mFDFDFDLoader.gif') no-repeat right 20px center;
+		}
+
+	/* --------------------------------------------------------- */
+	/* FORM HEADER
+	/* --------------------------------------------------------- */
+
+		.headerformglobal, .headerFormHome {
+			width: 100%;
+			box-sizing: border-box;
+			color: var(--color-adminTextColor);
+			background-color: #2F2F2F;
+			border: 1px solid #2F2F2F;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			font-size: 20px;
+		}
+
+		.headerformglobal {
+			padding: 10px 5px 15px 10px;
+		}
+
+		.headerFormHome {
+			padding: 15px 5px 15px 15px;
+		}
+
+		.headerformglobal .titleRed {
+			padding-left: 10px;
+		}
+
+		.headerform,
+		.headerformtoggle {
+			width: 100%;
+			padding: 15px;
+			font-size: 14px;
+			box-sizing: border-box;
+			color: #FFFFFF;
+			border: 1px solid #ECECEC;
+			background-size: 100% 100%;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			background-color: #454545;
+		}
+
+	/* --------------------------------------------------------- */
+	/* FORM BODY
+	/* --------------------------------------------------------- */
+
+		.corpsForm {
+			width: 100%;
+			padding: 15px;
+			background-color: #f4f1f1;
+			box-sizing: border-box;
+		}
+
+		.corpsForm a {
+			color: #000;
+		}
+
+		.corpsForm a:hover {
+			color: var(--color-adminColor);
+		}
+
+	/* --------------------------------------------------------- */
+	/* FIELD FORM */
+	/* --------------------------------------------------------- */
+
+		.input-small,
+		.input-normal,
+		.input-full,
+		.input-full-lang,
+		.select-menu,
+		.formdate,
+		.form-area {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			border: 1px solid #ECECEC;
+			background-color: #FDFDFD;
+			border-radius: 1px;
+			margin-bottom: 4px;
+		}
+
+	/* --------------------------------------------------------- */
+	/* FIELD STANDART */
+	/* --------------------------------------------------------- */
+
+		.input-small {
+			width: 100px;
+			font-size: 13px;
+			padding: 10px;
+		}
+
+		.input-normal {
+			width: 250px;
+			font-size: 13px;
+			padding: 10px;
+		}
+
+		.input-full {
+			width: 100%;
+			font-size: 13px;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		.input-full-lang {
+			width: 100%;
+			font-size: 13px;
+			padding: 10px;
+			padding-left: 40px;
+			box-sizing: border-box;
+		}
+
+		.select-menu {
+			width: 170px;
+			height: 20px;
+			font-size: 11px;
+			color: #222;
+			padding: 2px;
+		}
+
+
+		.requiredField {
+			border-left:5px solid #e74c3c!important;
+			border-bottom-left-radius: 3px;
+			border-top-left-radius: 3px;
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* SELECT INPUT                                              */
+	/* --------------------------------------------------------- */
+
+		.dropdown {
+			position: relative;
+			width: 280px;
+			font-family: system-ui, sans-serif;
+		}
+
+		/* Style du select */
+		.dropdown select {
+			appearance: none;
+			width: 100%;
+			padding: 10px 40px 10px 12px;
+
+			border-radius: 3px;
+			border: 1px solid #d1d5db;
+
+			background: linear-gradient(180deg, #ffffff, #f9fafb);
+			font-size: 16px;
+			color: #111827;
+
+			cursor: pointer;
+			transition: 0.25s ease;
+		}
+
+		/* Hover */
+		.dropdown select:hover {
+			border-color: #6366f1;
+		}
+
+		/* Focus */
+		.dropdown select:focus {
+			outline: none;
+			border-color: #6366f1;
+			box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+		}
+
+		/* Flèche */
+		.dropdown::after {
+			content: "";
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			width: 8px;
+			height: 8px;
+			border-right: 2px solid #6b7280;
+			border-bottom: 2px solid #6b7280;
+			transform: translateY(-50%) rotate(45deg);
+			pointer-events: none;
+			transition: transform .2s ease;
+		}
+
+		/* rotation quand actif */
+		.dropdown select:focus + .dropdown::after {
+			transform: translateY(-50%) rotate(225deg);
+		}
+
+
+
+	/* --------------------------------------------------------- */
+	/* MENU / DATE */
+	/* --------------------------------------------------------- */
+
+		.formdate {
+			width: 130px;
+			height: 15px;
+			font-size: 11px;
+			padding: 2px;
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* TEXT AREA */
+	/* --------------------------------------------------------- */
+
+		.form-area {
+			width: 100%;
+			font-size: 13px;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* SEARCH INPUT */
+	/* --------------------------------------------------------- */
+
+		.search-wrapper {
+			position: relative;
+			width: 100%;
+			padding: 10px 0px 10px 0px;
+			box-sizing: border-box;
+		}
+
+		.search-input {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			border: 1px solid #ECECEC;
+			background-color: #FDFDFD;
+
+			background-image: url("/img/interface/icons/loupe.svg");
+			background-repeat: no-repeat;
+			background-position: 10px center;
+			background-size: 20px 20px;
+
+			padding: 13px 44px 13px 40px;
+			width: 100%;
+			font-size: 14px;
+			border-radius: 10px;
+		}
+
+		.clear-search {
+			position: absolute;
+			right: 12px;
+			top: 50%;
+			transform: translateY(-50%);
+
+			display: none;
+			align-items: center;
+			justify-content: center;
+
+			width: 24px;
+			height: 24px;
+			padding: 0;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+		}
+
+		.clear-icon {
+			width: 16px;
+			height: 16px;
+			stroke: #999;
+			stroke-width: 2;
+			stroke-linecap: round;
+			margin-top: -5px;
+		}
+
+		.clear-search:hover .clear-icon {
+			stroke: #333;
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* ERROR | VALID FORM */
+	/* --------------------------------------------------------- */
+
+		/* Champ invalide */
+		input.error,
+		textarea.error {
+			border: 1px solid #e74c3c;
+			background-color: #fff6f6;
+			box-shadow: 0 0 10px 2px rgba(231, 76, 60, 0.7); /* rouge */
+			outline: none;
+			transition: box-shadow 0.3s ease, border-color 0.3s ease;
+		}
+
+		input.valid,
+		textarea.valid {
+			border: 1px solid #2ecc71;
+			background-color: #f6fff6;
+			box-shadow: 0 0 10px 2px rgba(46, 204, 113, 0.7); /* vert */
+			outline: none;
+			transition: box-shadow 0.3s ease, border-color 0.3s ease;
+		}
+
+		.error-message {
+			background-color: #e74c3c;
+			color: #FFFFFF;
+			font-size: 13px;
+			margin-top: 5px;
+			padding: 10px 10px 8px 10px;
+			border-radius: 5px;
+			display: inline-block;
+		}
+
+		.password-strength{
+			margin-top:5px;
+			padding:8px;
+			color:white;
+			font-weight:bold;
+		}
+
+		.password-strength.faible{
+			background:red;
+		}
+
+		.password-strength.moyenne{
+			background:orange;
+		}
+
+		.password-strength.forte{
+			background:green;
+		}
+
+		.error-focus {
+
+			animation: errorPulse 0.7s ease;
+		}
+
+		@keyframes errorPulse {
+
+			0% {
+				transform: scale(1);
+			}
+
+			30% {
+				transform: scale(1.02);
+			}
+
+			60% {
+				transform: scale(0.99);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+	/* --------------------------------------------------------- */
+	/* ERROR LIST */
+	/* --------------------------------------------------------- */
+
+		#errorList {
+			display: none;
+			border: 1px solid #e74c3c;
+			background: #fff6f6;
+			color: #e74c3c;
+			padding: 10px;
+			margin: 15px;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		#errorList div {
+			margin-bottom: 5px;
+		}
+
+
+	/* --------------------------------------------------------- */
+	/* COLOR INPUT */
+	/* --------------------------------------------------------- */
+
+		.colorInput {
+			font-family: inherit;
+			font-size: inherit;
+			padding: 5px;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			background-color: #fff;
+			box-shadow: none;
+		}
+
+
+	/* --------------------------------------------------------- */ 
+	/* RADIO CHECK INPUT */
+	/* --------------------------------------------------------- */
+
+        .containerCB {
+            display: inline-block;
+            position: relative;
+            padding-left: 35px;
+            padding-top: 5px;
+            margin-bottom: 12px;
+            margin-right: 30px;
+            cursor: pointer;
+            font-size: 12px;
+            user-select: none;
+        }
+
+        .containerCB input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+		.checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: #eee;
+		}
+
+        .containerCB:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        .containerCB input:checked ~ .checkmark {
+            background-color: var(--color-adminColor);
+        }
+
+        .containerCB input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .containerCB .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        .containerRB {
+            display: inline-block;
+            position: relative;
+            padding-left: 35px;
+            padding-top: 5px;
+            margin-bottom: 2px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .containerRB input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmarkRB {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 15px;
+            width: 15px;
+            background-color: #eee;
+            border: 5px solid #9A9A9A;
+            border-radius: 50%;
+        }
+
+        .containerRB:hover input ~ .checkmarkRB {
+            background-color: #ccc;
+        }
+
+        .containerRB input:checked ~ .checkmarkRB {
+            border: 5px solid var(--color-adminColor);
+            background-color: var(--color-adminColor);
+        }
+
+        .checkmarkRB:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .containerRB input:checked ~ .checkmarkRB:after {
+            display: block;
+        }
+
+        .containerRB .checkmarkRB:after {
+            top: 2.5px;
+            left: 2.5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+        }
+
+	/* --------------------------------------------------------- */
+	/* UPLAOD FORM */
+	/* --------------------------------------------------------- */
+
+		.dropZone {
+			border:3px dashed #bab9b9;
+			padding:40px 20px 40px 20px;
+			margin-top:10px;
+			font-size:14px;
+		}
+
+		.filePreview {
+			display:flex;
+			flex-wrap:wrap;
+			gap:10px;
+			margin-top:10px;
+		}
+
+
+	/* --------------------------------------------------------- */ 
+	/* TAGINPUT */
+	/* --------------------------------------------------------- */
+
+		.tag-container {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			cursor: text;
+			position: relative;
+			box-sizing: border-box;
+			background-color: #FFFFFF;
+		}
+
+		.tag-input {
+			border: none;
+			outline: none;
+			flex: 1;
+			min-width: 120px;
+			padding: 10px;
+			font-size: 13px;
+		}
+
+		.tag {
+			background: var(--color-adminColor);
+			color: white;
+			padding: 4px 6px 6px 10px;
+			border-radius: 3px;
+			margin: 3px;
+			display: inline-flex;
+			align-items: center;
+			font-size: 14px;
+			animation: fadeIn 0.2s ease;
+		}
+
+		.tag.removing {
+			animation: fadeOut 0.15s ease forwards;
+		}
+
+		.tag-remove {
+			margin-left: 6px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+		}
+
+		.tag-remove:hover {
+			background: rgba(255,255,255,0.25);
+		}
+
+		.suggestions {
+			position: absolute;
+			background: white;
+			border: 1px solid #ddd;
+			width: 100%;
+			top: 100%;
+			left: 0;
+			max-height: 200px;
+    		overflow-y: auto;
+			z-index: 100;
+		}
+
+		.suggestion {
+			padding: 8px;
+			cursor: pointer;
+		}
+
+		.suggestion:hover {
+			background: #f0f0f0;
+		}
+
+		@keyframes fadeIn {
+			from { opacity: 0; transform: scale(0.8); }
+			to { opacity: 1; transform: scale(1); }
+		}
+
+		@keyframes fadeOut {
+			to { opacity: 0; transform: scale(0.7); }
+		}

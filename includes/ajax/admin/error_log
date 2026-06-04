@@ -1,0 +1,10 @@
+[21-Apr-2026 11:28:20 Europe/Paris] PHP Fatal error:  Uncaught RuntimeException: La session doit être démarrée avant SecureManager. in /home/fcni6791/comptoirduson.com/includes/class/tools/SecureManager.class.php:40
+Stack trace:
+#0 /home/fcni6791/comptoirduson.com/includes/ajax/admin/process-menu.php(28): tools\SecureManager->__construct()
+#1 {main}
+  thrown in /home/fcni6791/comptoirduson.com/includes/class/tools/SecureManager.class.php on line 40
+[21-Apr-2026 11:28:22 Europe/Paris] PHP Fatal error:  Uncaught RuntimeException: La session doit être démarrée avant SecureManager. in /home/fcni6791/comptoirduson.com/includes/class/tools/SecureManager.class.php:40
+Stack trace:
+#0 /home/fcni6791/comptoirduson.com/includes/ajax/admin/process-menu.php(28): tools\SecureManager->__construct()
+#1 {main}
+  thrown in /home/fcni6791/comptoirduson.com/includes/class/tools/SecureManager.class.php on line 40

@@ -1,0 +1,86 @@
+/*
+ *  @author Luma Prod - Pierre Cosmao Dumanoir
+ *  @copyright  2003-2025 | Luma Prod - Pierre Cosmao Dumanoir
+ *  @version  Release: 3
+ */
+
+ 	/* --------------------------------------------------------- */ 
+	/* ADMIN HOME */
+	/* --------------------------------------------------------- */
+
+        #indexContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        #indexContainer .item {
+            flex-grow: 1; 
+            flex-shrink: 1;
+            flex-basis: 300px;
+            box-sizing: border-box;
+            font-size:14px;
+        }
+
+        #indexContainer.half .item {
+            flex: 1 1 calc(50% - 15px);
+        }
+
+        #indexContainer.third .item {
+            flex: 1 1 calc(33.333% - 15px);
+        }
+
+        #indexContainer.custom .item:first-child {
+            flex: 0 0 76%;
+        }
+        #indexContainer.custom .item:last-child {
+            flex: 0 0 24%;
+        }
+
+        /* ICONS */
+
+        #iconeItemAdmin {
+            text-align: center;
+        }
+
+         #iconeItemAdmin svg.adminHome {
+            color: var(--color-adminColor);
+            fill: currentColor;
+            height: 75px;
+            width: 75px;
+            padding: 30px;
+            padding-bottom: 5px;
+            cursor: pointer;
+        }
+
+        #indexContainer svg.groupItemAdmin {
+            color: var(--color-adminColor);
+            fill: currentColor;
+            width: 30px;
+        }
+
+
+	/* --------------------------------------------------------- */ 
+	/* STATS */
+	/* --------------------------------------------------------- */
+
+        #btnLines, #btnBars {
+			background-color: #000000;
+			font-size: 12px;
+			padding: 10px 15px 10px 15px;
+			font-weight: bold;
+			text-align: center;
+			border: 0px;
+			cursor: pointer;
+			color: #ffffff;
+			border-radius: 5px;
+			white-space: nowrap;
+			margin-right: 10px;
+			transition: background-color 0.3s ease;
+        }
+
+        #btnLines:hover, #btnBars:hover, #btnLines.current, #btnBars.current {
+			background-color: var(--color-adminColor);
+			cursor: pointer;
+			color: #ffffff;
+        }
