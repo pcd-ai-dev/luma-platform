@@ -203,10 +203,10 @@ Le code de production complet est disponible sur demande dans le cadre d'un entr
 ![Builder GrapesJS](screenshots/ScreenShotLumaCRM02.jpg)
 
 ### Outil de gestion de formation
-![Gestion de formation](ScreenShotLumaCRM03.jpg)
+![Gestion de formation](screenshots/ScreenShotLumaCRM03.jpg)
 
 ### Outil de gestion de projets (Client / Projet / ressources)
-![Gestion de proget](ScreenShotLumaCRM04.jpg)
+![Gestion de proget](screenshots/ScreenShotLumaCRM04.jpg)
 
 ---
 
