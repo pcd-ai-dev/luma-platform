@@ -22,104 +22,109 @@
                 private ?EmbeddingsManager $embeddings = null
             ) {}
 
-            // ─────────────────────────────────────────────────────────
-            // MÉTHODE PUBLIQUE — inchangée côté signature
-            // Elle choisit automatiquement vecteurs ou FULLTEXT
-            // ─────────────────────────────────────────────────────────
-            public function search(string $query, int $limit = 5): string {
-                $query = trim($query);
-                if (empty($query)) return '';
+            // ---------------------------------------------
+            // AUTO SEARCH METHOD => FULLTEXT ? EMBEDDING
+            // ---------------------------------------------
 
-                $rows = ($this->embeddings !== null)
-                    ? $this->searchByVector($query, $limit)
-                    : $this->searchByFulltext($query, $limit);
+                public function search(string $query, int $limit = 5): string {
+                    $query = trim($query);
+                    if (empty($query)) return '';
 
-                if (empty($rows)) return '';
+                    $rows = ($this->embeddings !== null)
+                        ? $this->searchByVector($query, $limit)
+                        : $this->searchByFulltext($query, $limit);
 
-                return $this->buildContext($rows);
-            }
+                    if (empty($rows)) return '';
 
-            // ─────────────────────────────────────────────────────────
-            // RECHERCHE VECTORIELLE
-            // ─────────────────────────────────────────────────────────
-
-            private function searchByVector(string $query, int $limit): array {
-                $questionVecteur = $this->embeddings->generer($query);
-
-                $stmt = $this->pdo->query(
-                    "SELECT title, content, embedding
-                    FROM ai_knowledge
-                    WHERE embedding IS NOT NULL"
-                );
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                if (empty($rows)) {
-                    return $this->searchByFulltext($query, $limit);
+                    return $this->buildContext($rows);
                 }
 
-                // 3. Calcul de similarité cosinus pour chaque doc
-                foreach ($rows as &$row) {
-                    $docVecteur   = EmbeddingsManager::decoder($row['embedding']);
-                    $row['score'] = EmbeddingsManager::similarite($questionVecteur, $docVecteur);
-                    unset($row['embedding']); // plus utile après calcul
+            // ---------------------------------------------------------
+            // VECTOR SEARCHING
+            // ---------------------------------------------------------
+
+                private function searchByVector(string $query, int $limit): array {
+
+                    $questionVecteur = $this->embeddings->generer($query);
+
+                    $stmt = $this->pdo->query(
+                        "SELECT title, content, embedding
+                        FROM ai_knowledge
+                        WHERE embedding IS NOT NULL"
+                    );
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    if (empty($rows)) {
+                        return $this->searchByFulltext($query, $limit);
+                    }
+
+                    // CHECK VECTOR SIMILARITIES -> ASKVECTOR -> DOCVECTOR
+                    foreach ($rows as &$row) {
+                        $docVecteur   = EmbeddingsManager::decoder($row['embedding']);
+                        $row['score'] = EmbeddingsManager::similarite($questionVecteur, $docVecteur);
+                        unset($row['embedding']);
+                    }
+                    unset($row);
+
+                    // SCORES SORT
+                    usort($rows, fn($a, $b) => $b['score'] <=> $a['score']);
+
+                    // DELETE SCORES UNDER 70%
+                    $top = array_slice($rows, 0, $limit);
+                    return array_values(
+                        array_filter($top, fn($r) => $r['score'] >= 0.70)
+                    );
                 }
-                unset($row);
 
-                // 4. Tri par score décroissant
-                usort($rows, fn($a, $b) => $b['score'] <=> $a['score']);
+            // ---------------------------------------------------------
+            // FULLTEXT SEARCHING
+            // ---------------------------------------------------------
 
-                // 5. Top $limit résultats au-dessus du seuil de pertinence
-                $top = array_slice($rows, 0, $limit);
-                return array_values(
-                    array_filter($top, fn($r) => $r['score'] >= 0.70)
-                );
-            }
+                private function searchByFulltext(string $query, int $limit): array {
+                    $search = $this->sanitize($query);
+                    if (empty($search)) return [];
 
-            // ─────────────────────────────────────────────────────────
-            // RECHERCHE FULLTEXT — ton code existant, inchangé
-            // ─────────────────────────────────────────────────────────
-            private function searchByFulltext(string $query, int $limit): array
-            {
-                $search = $this->sanitize($query);
-                if (empty($search)) return [];
-
-                $stmt = $this->pdo->prepare("
-                    SELECT
-                        title,
-                        content,
-                        MATCH(title, content)
-                        AGAINST(:search_A IN NATURAL LANGUAGE MODE) AS score
-                    FROM ai_knowledge
-                    WHERE MATCH(title, content)
-                    AGAINST(:search_B IN NATURAL LANGUAGE MODE)
-                    ORDER BY score DESC
-                    LIMIT {$limit}
-                ");
-                $stmt->execute(['search_A' => $search, 'search_B' => $search]);
-                return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
-            }
-
-            // ─────────────────────────────────────────────────────────
-            // CONSTRUCTION DU CONTEXTE — ton format existant, inchangé
-            // ─────────────────────────────────────────────────────────
-            private function buildContext(array $rows): string
-            {
-                $context = '';
-                foreach ($rows as $row) {
-                    $context .= "
-                        DOCUMENT: {$row['title']}
-                        {$row['content']}
-                        -----------------------------------
-                    ";
+                    $stmt = $this->pdo->prepare("
+                        SELECT
+                            title,
+                            content,
+                            MATCH(title, content)
+                            AGAINST(:search_A IN NATURAL LANGUAGE MODE) AS score
+                        FROM ai_knowledge
+                        WHERE MATCH(title, content)
+                        AGAINST(:search_B IN NATURAL LANGUAGE MODE)
+                        ORDER BY score DESC
+                        LIMIT {$limit}
+                    ");
+                    $stmt->execute(['search_A' => $search, 'search_B' => $search]);
+                    return $stmt->fetchAll(PDO::FETCH_ASSOC) ?: [];
                 }
-                return trim($context);
-            }
 
-            private function sanitize(string $query): string {
-                $query = strip_tags($query);
-                $query = preg_replace('/[^\p{L}\p{N}\s]/u', ' ', $query);
-                $query = preg_replace('/\s+/', ' ', $query);
-                return trim($query);
-            }
+            // ---------------------------------------------------------
+            // CONTEXT CONSTRUCTION
+            // ---------------------------------------------------------
+
+                private function buildContext(array $rows): string {
+                    $context = '';
+                    foreach ($rows as $row) {
+                        $context .= "
+                            DOCUMENT : {$row['title']}
+                            {$row['content']}
+                            -----------------------------------
+                        ";
+                    }
+                    return trim($context);
+                }
+
+            // ---------------------------------------------------------
+            // QUERY FORMATING
+            // ---------------------------------------------------------         
+
+                private function sanitize(string $query): string {
+                    $query = strip_tags($query);
+                    $query = preg_replace('/[^\p{L}\p{N}\s]/u', ' ', $query);
+                    $query = preg_replace('/\s+/', ' ', $query);
+                    return trim($query);
+                }
 
         }

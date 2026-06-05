@@ -19,15 +19,16 @@
                 private AiKnowledgeManager $knowledge
             ) {}
 
-            /**
-             * Point d'entrée principal
-             */
-            public function handle(
-                string $sessionId,
-                string $message,
-                string $system,
-                string $provider
-            ): string {
+            //---------------------------------------------------------  
+            // MAIN PROCESS
+            //--------------------------------------------------------- 
+
+                public function handle(
+                    string $sessionId,
+                    string $message,
+                    string $system,
+                    string $provider
+                ): string {
 
                 // -----------------------------------------
                 // SAVE USER MESSAGE
@@ -66,67 +67,71 @@
                     );
                 
                 // -----------------------------------------
-                // OPENAI CALL
+                // OPENAI / ANTHROPIC CALL
                 // -----------------------------------------
 
                     $response = $this->client->chat($messages, $provider);
+
 
                 // -----------------------------------------
                 // SAVE AI RESPONSE
                 // -----------------------------------------
 
-                $this->memory->save(
-                    sessionId: $sessionId,
-                    role: 'assistant',
-                    message: $response
-                );
+                    $this->memory->save(
+                        sessionId: $sessionId,
+                        role: 'assistant',
+                        message: $response
+                    );
 
                 return $response;
             }
 
-            /**
-             * Construction des messages OpenAI
-             */
-           private function buildPayload(
-                array $history,
-                string $knowledge,
-                string $message,
-                string $provider = 'anthropic'
-            ): array {
-                $messages = [];
+            // -----------------------------------------
+            // OPENAI / ANTHROPIC PROMPT CONSTRUCTION
+            // -----------------------------------------
 
-                if ($provider === 'openai') {
-                    $messages[] = ['role' => 'system', 'content' => $this->systemPrompt($knowledge)];
+                private function buildPayload(
+                        array $history,
+                        string $knowledge,
+                        string $message,
+                        string $provider = 'anthropic'
+                    ): array {
+                        $messages = [];
+
+                        if ($provider === 'openai') {
+                            $messages[] = ['role' => 'system', 'content' => $this->systemPrompt($knowledge)];
+                        }
+
+                        foreach ($history as $row) {
+                            $messages[] = ['role' => $row['role'], 'content' => $row['message']];
+                        }
+
+                        $messages[] = ['role' => 'user', 'content' => $message];
+
+                        $payload = [
+                            "model"       => $provider === 'anthropic' ? "claude-sonnet-4-6" : "gpt-4.1-mini",
+                            "max_tokens"  => $provider === 'anthropic' ? 400 : 600,
+                            "temperature" => $provider === 'anthropic' ? 0.4 : 0.7,
+                            "messages"    => $messages
+                        ];
+
+                        if ($provider === 'anthropic') {
+                            $payload['system'] = $this->systemPrompt($knowledge);
+                        }
+
+                        return $payload;
+                    }
+
+
+            // -----------------------------------------
+            // GET FORMATING KNONLEDGE
+            // -----------------------------------------
+
+                private function systemPrompt(string $knowledge): string {
+                    return "
+                        Documentation CMS :
+                        $knowledge
+                    ";
                 }
 
-                foreach ($history as $row) {
-                    $messages[] = ['role' => $row['role'], 'content' => $row['message']];
-                }
-
-                $messages[] = ['role' => 'user', 'content' => $message];
-
-                $payload = [
-                    "model"       => $provider === 'anthropic' ? "claude-sonnet-4-6" : "gpt-4.1-mini",
-                    "max_tokens"  => $provider === 'anthropic' ? 400 : 600,
-                    "temperature" => $provider === 'anthropic' ? 0.4 : 0.7,
-                    "messages"    => $messages
-                ];
-
-                if ($provider === 'anthropic') {
-                    $payload['system'] = $this->systemPrompt($knowledge);
-                }
-
-                return $payload;  // payload COMPLET
-            }
-
-
-            /**
-             * Prompt système principal
-             */
-            private function systemPrompt(string $knowledge): string {
-                return "
-                    Documentation CMS :
-                    $knowledge
-                ";
-            }
         }

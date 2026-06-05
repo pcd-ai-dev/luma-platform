@@ -19,30 +19,40 @@
                 private PDO $pdo
             ) {}
 
-            public function save(string $sessionId, string $role, string $message): void {
-                $stmt = $this->pdo->prepare("
-                    INSERT INTO ai_chat_messages (session_id, role, message)
-                    VALUES (:session_id, :role, :message)
-                ");
+            // ---------------------------------------------------------
+            // SAVE MESSAGE
+            // ---------------------------------------------------------   
 
-                $stmt->execute([
-                    'session_id' => $sessionId,
-                    'role' => $role,
-                    'message' => $message
-                ]);
-            }
+                public function save(string $sessionId, string $role, string $message): void {
+                    $stmt = $this->pdo->prepare("
+                        INSERT INTO ai_chat_messages (session_id, role, message)
+                        VALUES (:session_id, :role, :message)
+                    ");
 
-            public function load(string $sessionId, int $limit = 20): array {
-                $stmt = $this->pdo->prepare("
-                    SELECT role, message
-                    FROM ai_chat_messages
-                    WHERE session_id = :session_id
-                    ORDER BY id DESC
-                    LIMIT $limit
-                ");
+                    $stmt->execute([
+                        'session_id' => $sessionId,
+                        'role' => $role,
+                        'message' => $message
+                    ]);
+                }
 
-                $stmt->execute(['session_id' => $sessionId]);
 
-                return array_reverse($stmt->fetchAll(PDO::FETCH_ASSOC));
-            }
+            // ---------------------------------------------------------
+            // LOAD MESSAGES
+            // ---------------------------------------------------------   
+
+                public function load(string $sessionId, int $limit = 20): array {
+                    $stmt = $this->pdo->prepare("
+                        SELECT role, message
+                        FROM ai_chat_messages
+                        WHERE session_id = :session_id
+                        ORDER BY id DESC
+                        LIMIT $limit
+                    ");
+
+                    $stmt->execute(['session_id' => $sessionId]);
+
+                    return array_reverse($stmt->fetchAll(PDO::FETCH_ASSOC));
+                }
+                
         }
